@@ -14,6 +14,7 @@ function App() {
       <main>
         <Game questionsList={EnglishQA} />
       </main>
+      <a className="link-to-raymag" title="Go to Raymag's Webiste" href="https://raymag.github.io/">Go to Raymag?</a>
     </div>
   );
 }

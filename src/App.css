@@ -44,3 +44,15 @@
     transform: rotate(360deg);
   }
 }
+
+a.link-to-raymag{
+  font-size: 12px;
+  text-decoration: none;
+  color: rgb(136, 42, 42);
+  margin-top: 4px;
+}
+a.link-to-raymag img{
+  height: 40px;
+  display: block;
+  margin: auto;
+}
