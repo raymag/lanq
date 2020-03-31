@@ -23,7 +23,7 @@ export default function Game({questionsList = []}){
         if(messagesEnd !== undefined){
             messagesEnd.scrollIntoView({ behavior: "smooth" });
         }
-    }, [currentIndex, messagesEnd, questions]);
+    }, [currentIndex, messagesEnd, questions, messages]);
 
     function nextQuestion(){
         if(availableIndexes.length === 0){
