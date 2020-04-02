@@ -79,7 +79,7 @@ export default function Game(){
                     <div id="game-chat-messages">
                         {messages.map( (msg, index) => 
                             msg.isCorrect ?
-                            <span key={index} className="correct-answer"><b>YOU:</b> {msg.text}<br/></span>
+                            <span key={index} className="correct-answer"><b>{msg.author}:</b> {msg.text}<br/></span>
                             :<span key={index}><b>{msg.author}:</b> {msg.text}<br/></span>
                         )}
                         <div style={{ opacity: 0 }} ref={(e) => setMessagesEnd(e)}>END</div>
