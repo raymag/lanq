@@ -1,87 +1,77 @@
 import React, { useState, useEffect } from 'react';
+import socketIOClient from 'socket.io-client';
 
 import './styles.css';
 
-export default function Game({questionsList = []}){
-    const [score, setScore] = useState(0);
+export default function Game(){
+    const [currentMsg, setCurrentMSg] = useState('');
     const [messages, setMessages] = useState([]);
-    const [questions] = useState(questionsList);
-    const [currentIndex, setCurrentIndex] = useState();
-    const [availableIndexes, setAvailableIndexes] = useState([...questionsList.keys()]);
     const [messagesEnd, setMessagesEnd] = useState();
     
+    const [game, setGame] = useState([]);
+    const [firstTime, setFirstTime] = useState(true);
+    const [socket, setSocket] = useState();
+    
     const msgMax = 15;
-
+    const apiPath = 'https://lanq-back.herokuapp.com/';
+    
     useEffect(() => {
-        if(currentIndex === undefined && questions.length > 0){
-            const randIndex = Math.floor(Math.random() * questions.length);
-            setCurrentIndex(randIndex);
-            let tempAvailableIndexes = [...questions.keys()];
-            tempAvailableIndexes.splice(randIndex, 1);
-            setAvailableIndexes(tempAvailableIndexes);
+        if(!firstTime){
+            if(socket === undefined){
+                setSocket(socketIOClient(apiPath));
+            }else{
+                socket.on('start', data => {
+                    console.log(data);
+                    setGame(data);
+                })
+                socket.on('update', data => {
+                    setGame(data);  
+                });
+                socket.on('message', data => {
+                    let tempMessages = [...messages, data];
+                    if(messages.length >= msgMax){
+                        tempMessages.splice(0, 1);
+                    }
+                    setMessages(tempMessages);
+                })
+                if(currentMsg !== ''){
+                    socket.emit('message', {text: currentMsg});
+                    setCurrentMSg('');
+                }
+            }
+        }else{
+            setFirstTime(false);
         }
+        
         if(messagesEnd !== undefined){
             messagesEnd.scrollIntoView({ behavior: "smooth" });
         }
-    }, [currentIndex, messagesEnd, questions, messages]);
-
-    function nextQuestion(){
-        if(availableIndexes.length === 0){
-            setAvailableIndexes([...questions.keys()]);
-        }
-        let randIndex = Math.floor(Math.random() * availableIndexes.length);
-        let tempAvailableIndexes = [...availableIndexes];
-        tempAvailableIndexes.splice(randIndex, 1);
-        setAvailableIndexes(tempAvailableIndexes);
-        setCurrentIndex(availableIndexes[randIndex]);
-    }
-
-    function correctAnswer(e){
-        let tempMessages = [...messages];
-        if(messages.length === msgMax){
-            tempMessages.splice(0, 1);
-        }
-        const message = {text: e.target.value, isCorrect: true};
-        setMessages([...tempMessages, message]);
-        e.target.value = '';
-        setScore(score+10);
-        nextQuestion();
-    }
-    function wrongAnswer(e){
-        let tempMessages = [...messages];
-        if(messages.length === msgMax){
-            tempMessages.splice(0, 1);
-        }
-        const message = {text: e.target.value, isCorrect: false};
-        setMessages([...tempMessages, message]);
-        e.target.value = '';
-    }
+    }, [messagesEnd, messages, firstTime, currentMsg, socket]);
 
     function send(e){
         if(e.keyCode === 13 && e.target.value.replace(/ /ig, '') !== ''){
-            if(questions.length !== 0){
-                if(e.target.value.toLowerCase()  === questions[currentIndex].answer){
-                    correctAnswer(e);
-                }else{
-                    wrongAnswer(e);
-                }
-            }else{
-                console.log("[Game]: questionsList must not be null.");
-            }
+            setCurrentMSg(e.target.value);
+            e.target.value = '';
         }
     }
 
     return (
         <div id="game">
             <div id="game-sidebar">
-                <span><b>YOU</b>: {score} pts </span>
+                {
+                    game.length !== 0 ? 
+                        Object.keys(game.players).map((playerId, index) => 
+                            <span key={index}><b>{game.players[playerId].username}</b>: {game.players[playerId].score} pts<br/></span>
+                        )
+                    : ''
+                }
             </div>
             <div id="game-holder">
                 <div id="game-show">
-                    {currentIndex !== undefined? 
+                    {game.length !== 0? 
                     <>
                     <span><b>What is this?</b></span><br/>
-                    <img src={questions[currentIndex].thumbnail} alt="thumbnail" />
+                    <img src={game.thumbnail} alt="thumbnail" />
                     </>: ''
                     }
                 </div>
@@ -90,7 +80,7 @@ export default function Game({questionsList = []}){
                         {messages.map( (msg, index) => 
                             msg.isCorrect ?
                             <span key={index} className="correct-answer"><b>YOU:</b> {msg.text}<br/></span>
-                            :<span key={index}><b>YOU:</b> {msg.text}<br/></span>
+                            :<span key={index}><b>{msg.author}:</b> {msg.text}<br/></span>
                         )}
                         <div style={{ opacity: 0 }} ref={(e) => setMessagesEnd(e)}>END</div>
                     </div> 
