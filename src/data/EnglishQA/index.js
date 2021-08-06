@@ -1,7 +1,7 @@
 const EnglishQA = [
     {
         thumbnail: 'lanq/assets/EnglishQA/apple.png',
-        answer: 'apple'       
+        answer: {'english': 'apple', 'spanish': 'manzana', 'portuguese':'maca'}       
     },
     {
         thumbnail: 'lanq/assets/EnglishQA/pencil.png',

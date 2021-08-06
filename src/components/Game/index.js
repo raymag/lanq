@@ -3,7 +3,7 @@ import socketIOClient from 'socket.io-client';
 
 import './styles.css';
 
-export default function Game(){
+export default function Game({questionList}){
     const [currentMsg, setCurrentMSg] = useState('');
     const [messages, setMessages] = useState([]);
     const [messagesEnd, setMessagesEnd] = useState();
@@ -13,7 +13,7 @@ export default function Game(){
     const [socket, setSocket] = useState();
     
     const msgMax = 15;
-    const apiPath = 'https://lanq-back.herokuapp.com/';
+    const apiPath = 'https://language-play-back.herokuapp.com/';
     
     useEffect(() => {
         if(!firstTime){
