@@ -14,7 +14,7 @@ const EnglishQA = [
 	{
 		thumbnail: "assets/EnglishQA/pillow.png",
 		answer: {
-			english: "cushion",
+			english: "pillow",
 			spanish: "amortiguar",
 			portuguese: "almofada",
 		},
@@ -26,21 +26,21 @@ const EnglishQA = [
 	{
 		thumbnail: "assets/EnglishQA/notebook.png",
 		answer: {
-			english: "Journal,book,copybook",
+			english: "notebook",
 			spanish: "diario",
-			portuguese: "Caderno",
+			portuguese: "caderno",
 		},
 	},
 	{
 		thumbnail: "assets/EnglishQA/glass-of-water.png",
-		answer: { english: "glass,cup", spanish: "vidrio", portuguese: "copo" },
+		answer: { english: "glass", spanish: "vidrio", portuguese: "copo" },
 	},
 	{
 		thumbnail: "assets/EnglishQA/smartphone.png",
 		answer: {
-			english: "Telephone,Phone",
-			spanish: "Teléfono móvil",
-			portuguese: "Celular",
+			english: "phone",
+			spanish: "teléfono móvil",
+			portuguese: "celular",
 		},
 	},
 
@@ -50,7 +50,7 @@ const EnglishQA = [
 	},
 	{
 		thumbnail: "assets/EnglishQA/pencil.png",
-		answer: { english: "pencil", spanish: "lapiz", portuguese: "Lapis" },
+		answer: { english: "pencil", spanish: "lapiz", portuguese: "lapis" },
 	},
 	{
 		thumbnail: "assets/EnglishQA/book.png",
@@ -74,7 +74,7 @@ const EnglishQA = [
 	},
 	{
 		thumbnail: "violao",
-		answer: { english: "guitar", spanish: "Guitarra", portuguese: "Violao" },
+		answer: { english: "guitar", spanish: "guitarra", portuguese: "violao" },
 	},
 	{
 		thumbnail: "atividade",
@@ -85,12 +85,12 @@ const EnglishQA = [
 		},
 	},
 	{
-		thumbnail: "Medico",
-		answer: { english: "Doctor", spanish: "Medico", portuguese: "Medico" },
+		thumbnail: "medico",
+		answer: { english: "doctor", spanish: "medico", portuguese: "medico" },
 	},
 	{
 		thumbnail: "Abacate ",
-		answer: { english: "Avocado", spanish: "Palta", portuguese: "Abacate " },
+		answer: { english: "avocado", spanish: "palta", portuguese: "abacate" },
 	},
 	{
 		thumbnail: "cacau",
@@ -98,14 +98,14 @@ const EnglishQA = [
 	},
 	{
 		thumbnail: "Goiaba ",
-		answer: { english: "Guava", spanish: "Guayaba", portuguese: " Goiaba " },
+		answer: { english: "guava", spanish: "guayaba", portuguese: "goiaba" },
 	},
 	{
-		thumbnail: "Cachorros",
+		thumbnail: "Cachorro",
 		answer: {
-			english: "dogs,dog",
-			spanish: "perros,perro",
-			portuguese: "Cachorros",
+			english: "dog",
+			spanish: "perro",
+			portuguese: "cachorro",
 		},
 	},
 	{
@@ -114,7 +114,7 @@ const EnglishQA = [
 	},
 	{
 		thumbnail: "abelha",
-		answer: { english: "Bee", spanish: "abeja", portuguese: "abelha" },
+		answer: { english: "bee", spanish: "abeja", portuguese: "abelha" },
 	},
 	{
 		thumbnail: "elefante",
@@ -126,13 +126,13 @@ const EnglishQA = [
 	},
 	{
 		thumbnail: "colher",
-		answer: { english: "Spoon", spanish: "Cuchara", portuguese: "colher" },
+		answer: { english: "spoon", spanish: "cuchara", portuguese: "colher" },
 	},
 	{
 		thumbnail: "supermercado",
 		answer: {
-			english: "Supermarket",
-			spanish: "Supermercado",
+			english: "supermarket",
+			spanish: "supermercado",
 			portuguese: "supermercado",
 		},
 	},
