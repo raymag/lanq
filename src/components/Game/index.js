@@ -3,7 +3,7 @@ import socketIOClient from 'socket.io-client';
 
 import './styles.css';
 
-export default function Game({questionList}){
+export default function Game(){
     const [currentMsg, setCurrentMSg] = useState('');
     const [messages, setMessages] = useState([]);
     const [messagesEnd, setMessagesEnd] = useState();
