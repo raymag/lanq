@@ -69,15 +69,15 @@ const EnglishQA = [
 		answer: { english: "paper", spanish: "papel", portuguese: "papel" },
 	},
 	{
-		thumbnail: "regua",
+		thumbnail: "assets/EnglishQA/ferramenta-de-regua-quadrada.png",
 		answer: { english: "ruler", spanish: "regla", portuguese: "regua" },
 	},
 	{
-		thumbnail: "violao",
+		thumbnail: "assets/EnglishQA/violao.png",
 		answer: { english: "guitar", spanish: "guitarra", portuguese: "violao" },
 	},
 	{
-		thumbnail: "atividade",
+		thumbnail: "assets/EnglishQA/atividade",
 		answer: {
 			english: "activity",
 			spanish: "actividad",
@@ -85,23 +85,23 @@ const EnglishQA = [
 		},
 	},
 	{
-		thumbnail: "medico",
+		thumbnail: "assets/EnglishQA/medico",
 		answer: { english: "doctor", spanish: "medico", portuguese: "medico" },
 	},
 	{
-		thumbnail: "Abacate ",
+		thumbnail: "assets/EnglishQA/Abacate ",
 		answer: { english: "avocado", spanish: "palta", portuguese: "abacate" },
 	},
 	{
-		thumbnail: "cacau",
+		thumbnail: "assets/EnglishQA/cacau",
 		answer: { english: "cocoa", spanish: "cacao", portuguese: "cacau" },
 	},
 	{
-		thumbnail: "Goiaba ",
+		thumbnail: "assets/EnglishQA/goiaba.png",
 		answer: { english: "guava", spanish: "guayaba", portuguese: "goiaba" },
 	},
 	{
-		thumbnail: "Cachorro",
+		thumbnail: "assets/EnglishQA/cachorro.png",
 		answer: {
 			english: "dog",
 			spanish: "perro",
@@ -109,15 +109,15 @@ const EnglishQA = [
 		},
 	},
 	{
-		thumbnail: "gato",
+		thumbnail: "assets/EnglishQA/gato-manx.png",
 		answer: { english: "cat", spanish: "gato", portuguese: "gato" },
 	},
 	{
-		thumbnail: "abelha",
+		thumbnail: "assets/EnglishQA/abelhas.png",
 		answer: { english: "bee", spanish: "abeja", portuguese: "abelha" },
 	},
 	{
-		thumbnail: "elefante",
+		thumbnail: "assets/EnglishQA/elephant.jpg",
 		answer: {
 			english: "elephant",
 			spanish: "elefante",
@@ -125,11 +125,11 @@ const EnglishQA = [
 		},
 	},
 	{
-		thumbnail: "colher",
+		thumbnail: "assets/EnglishQA/spoon.jpg",
 		answer: { english: "spoon", spanish: "cuchara", portuguese: "colher" },
 	},
 	{
-		thumbnail: "supermercado",
+		thumbnail: "assets/EnglishQA/supermarket.jpg",
 		answer: {
 			english: "supermarket",
 			spanish: "supermercado",
@@ -137,19 +137,19 @@ const EnglishQA = [
 		},
 	},
 	{
-		thumbnail: "hospital",
+		thumbnail: "assets/EnglishQA/hospital.jpg",
 		answer: {
-			english: "infirmary",
-			spanish: "enfermería",
+			english: "hospital",
+			spanish: "enfermeria",
 			portuguese: "hospital",
 		},
 	},
 	{
-		thumbnail: "loja",
+		thumbnail: "assets/EnglishQA/Loja.png",
 		answer: { english: "store", spanish: "tienda", portuguese: "loja" },
 	},
 	{
-		thumbnail: "casa",
+		thumbnail: "assets/EnglishQA/casa.png",
 		answer: { english: "home", spanish: "casa", portuguese: "casa" },
 	},
 ];
