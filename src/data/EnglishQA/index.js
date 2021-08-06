@@ -77,23 +77,15 @@ const EnglishQA = [
 		answer: { english: "guitar", spanish: "guitarra", portuguese: "violao" },
 	},
 	{
-		thumbnail: "assets/EnglishQA/atividade",
-		answer: {
-			english: "activity",
-			spanish: "actividad",
-			portuguese: "atividade",
-		},
-	},
-	{
-		thumbnail: "assets/EnglishQA/medico",
+		thumbnail: "assets/EnglishQA/medico.png",
 		answer: { english: "doctor", spanish: "medico", portuguese: "medico" },
 	},
 	{
-		thumbnail: "assets/EnglishQA/Abacate ",
+		thumbnail: "assets/EnglishQA/fatiador-de-abacate.png",
 		answer: { english: "avocado", spanish: "palta", portuguese: "abacate" },
 	},
 	{
-		thumbnail: "assets/EnglishQA/cacau",
+		thumbnail: "assets/EnglishQA/cacau.png",
 		answer: { english: "cocoa", spanish: "cacao", portuguese: "cacau" },
 	},
 	{
