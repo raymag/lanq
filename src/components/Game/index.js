@@ -4,55 +4,57 @@ import socketIOClient from "socket.io-client";
 import "./styles.css";
 
 export default function Game() {
-	const [currentMsg, setCurrentMSg] = useState("");
 	const [messages, setMessages] = useState([]);
-	const [messagesEnd, setMessagesEnd] = useState();
-
+	const [message, setMessage] = useState();
 	const [game, setGame] = useState([]);
-	const [firstTime, setFirstTime] = useState(true);
-	const [socket, setSocket] = useState();
+	const [socket, setSocket] = useState(undefined);
 
 	const msgMax = 15;
-	const apiPath = "https://language-play-back.herokuapp.com/";
+	// const apiPath = "https://language-play-back.herokuapp.com/";
+	const apiPath = "localhost:3001/";
 
 	useEffect(() => {
-		if (!firstTime) {
-			if (socket === undefined) {
-				setSocket(socketIOClient(apiPath));
-			} else {
-				socket.on("start", (data) => {
-					console.log("[start]", data);
-					setGame(data);
-				});
-				socket.on("update", (data) => {
-					console.log("[update]", data);
-					setGame(data);
-				});
-				socket.on("message", (data) => {
-					let tempMessages = [...messages, data];
-					if (messages.length >= msgMax) {
-						tempMessages.splice(0, 1);
-					}
-					setMessages(tempMessages);
-				});
-				if (currentMsg !== "") {
-					socket.emit("message", { text: currentMsg });
-					setCurrentMSg("");
-				}
-			}
-		} else {
-			setFirstTime(false);
-		}
+		setSocket(socketIOClient(apiPath));
+	}, []);
 
-		if (messagesEnd !== undefined) {
-			messagesEnd.scrollIntoView({ behavior: "smooth" });
+	useEffect(() => {
+		if (message !== undefined) {
+			const tmpMsgs = [...messages, message];
+			if (messages.length >= msgMax) {
+				tmpMsgs.splice(0, 1);
+			}
+			setMessage(undefined);
+			setMessages(tmpMsgs);
 		}
-	}, [messagesEnd, messages, firstTime, currentMsg, socket]);
+	}, [message, messages]);
+
+	useEffect(() => {
+		if (socket !== undefined) {
+			socket.on("start", (data) => {
+				console.log("\n[start]", data);
+				setGame(data);
+			});
+
+			socket.on("message", (data) => {
+				console.log("\n[message]", data);
+				setMessage(data);
+			});
+
+			socket.on("update", (data) => {
+				console.log("\n[update]", data);
+				setGame(data);
+			});
+		}
+	}, [socket]);
 
 	function send(e) {
+		socket.emit("message", { text: e.target.value });
+		e.target.value = "";
+	}
+
+	function keydown(e) {
 		if (e.keyCode === 13 && e.target.value.replace(/ /gi, "") !== "") {
-			setCurrentMSg(e.target.value);
-			e.target.value = "";
+			send(e);
 		}
 	}
 
@@ -98,12 +100,9 @@ export default function Game() {
 								</span>
 							)
 						)}
-						<div style={{ opacity: 0 }} ref={(e) => setMessagesEnd(e)}>
-							END
-						</div>
 					</div>
 					<div id='game-chat-writer'>
-						<input type='text' autoFocus onKeyDown={send} />
+						<input type='text' autoFocus onKeyDown={keydown} />
 					</div>
 				</div>
 			</div>
