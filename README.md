@@ -1,3 +1,7 @@
+# LanQ
+Learn languages as you play with your friends!
+![screenshot](https://user-images.githubusercontent.com/29918030/128584251-cc6b4011-0b14-4968-b3e7-f1b0d01e714c.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
