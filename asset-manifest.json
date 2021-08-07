@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/lanq/static/css/main.e7b5fe10.chunk.css",
+    "main.css": "/lanq/static/css/main.f389864e.chunk.css",
     "main.js": "/lanq/static/js/main.3f2acd3a.chunk.js",
     "main.js.map": "/lanq/static/js/main.3f2acd3a.chunk.js.map",
     "runtime-main.js": "/lanq/static/js/runtime-main.d0dd9e39.js",
@@ -8,15 +8,15 @@
     "static/js/2.11b672dc.chunk.js": "/lanq/static/js/2.11b672dc.chunk.js",
     "static/js/2.11b672dc.chunk.js.map": "/lanq/static/js/2.11b672dc.chunk.js.map",
     "index.html": "/lanq/index.html",
-    "precache-manifest.36efedf9c7a520ca0471d1dc99565a14.js": "/lanq/precache-manifest.36efedf9c7a520ca0471d1dc99565a14.js",
+    "precache-manifest.591b2c294f1792910badb8bd09132170.js": "/lanq/precache-manifest.591b2c294f1792910badb8bd09132170.js",
     "service-worker.js": "/lanq/service-worker.js",
-    "static/css/main.e7b5fe10.chunk.css.map": "/lanq/static/css/main.e7b5fe10.chunk.css.map",
+    "static/css/main.f389864e.chunk.css.map": "/lanq/static/css/main.f389864e.chunk.css.map",
     "static/js/2.11b672dc.chunk.js.LICENSE.txt": "/lanq/static/js/2.11b672dc.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d0dd9e39.js",
     "static/js/2.11b672dc.chunk.js",
-    "static/css/main.e7b5fe10.chunk.css",
+    "static/css/main.f389864e.chunk.css",
     "static/js/main.3f2acd3a.chunk.js"
   ]
 }
