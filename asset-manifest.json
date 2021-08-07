@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/lanq/static/css/main.f389864e.chunk.css",
-    "main.js": "/lanq/static/js/main.3f2acd3a.chunk.js",
-    "main.js.map": "/lanq/static/js/main.3f2acd3a.chunk.js.map",
+    "main.js": "/lanq/static/js/main.a80ed3f4.chunk.js",
+    "main.js.map": "/lanq/static/js/main.a80ed3f4.chunk.js.map",
     "runtime-main.js": "/lanq/static/js/runtime-main.d0dd9e39.js",
     "runtime-main.js.map": "/lanq/static/js/runtime-main.d0dd9e39.js.map",
     "static/js/2.11b672dc.chunk.js": "/lanq/static/js/2.11b672dc.chunk.js",
     "static/js/2.11b672dc.chunk.js.map": "/lanq/static/js/2.11b672dc.chunk.js.map",
     "index.html": "/lanq/index.html",
-    "precache-manifest.591b2c294f1792910badb8bd09132170.js": "/lanq/precache-manifest.591b2c294f1792910badb8bd09132170.js",
+    "precache-manifest.5be7f36ef514e38222a02b251dd0e5e8.js": "/lanq/precache-manifest.5be7f36ef514e38222a02b251dd0e5e8.js",
     "service-worker.js": "/lanq/service-worker.js",
     "static/css/main.f389864e.chunk.css.map": "/lanq/static/css/main.f389864e.chunk.css.map",
     "static/js/2.11b672dc.chunk.js.LICENSE.txt": "/lanq/static/js/2.11b672dc.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.d0dd9e39.js",
     "static/js/2.11b672dc.chunk.js",
     "static/css/main.f389864e.chunk.css",
-    "static/js/main.3f2acd3a.chunk.js"
+    "static/js/main.a80ed3f4.chunk.js"
   ]
 }
