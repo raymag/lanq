@@ -7,17 +7,18 @@ export default function Game() {
 	const [messages, setMessages] = useState([]);
 	const [message, setMessage] = useState();
 	const [game, setGame] = useState([]);
+	const [players, setPlayers] = useState(undefined);
 	const [socket, setSocket] = useState(undefined);
 
 	const msgMax = 15;
-	// const apiPath = "https://language-play-back.herokuapp.com/";
-	const apiPath = "localhost:3001/";
+	const apiPath = "https://language-play-back.herokuapp.com/";
 
 	useEffect(() => {
 		setSocket(socketIOClient(apiPath));
 	}, []);
 
 	useEffect(() => {
+		// handle chat messages
 		if (message !== undefined) {
 			const tmpMsgs = [...messages, message];
 			if (messages.length >= msgMax) {
@@ -29,6 +30,16 @@ export default function Game() {
 	}, [message, messages]);
 
 	useEffect(() => {
+		// handle players change
+		if (players !== undefined) {
+			console.log("Updating players");
+			setGame({ ...game, players: players });
+			setPlayers(undefined);
+		}
+	}, [players, game]);
+
+	useEffect(() => {
+		// listen to socket events
 		if (socket !== undefined) {
 			socket.on("start", (data) => {
 				console.log("\n[start]", data);
@@ -43,6 +54,11 @@ export default function Game() {
 			socket.on("update", (data) => {
 				console.log("\n[update]", data);
 				setGame(data);
+			});
+
+			socket.on("playerConnect", (data) => {
+				console.log("\n[player connect]", data);
+				setPlayers(data.players);
 			});
 		}
 	}, [socket]);
