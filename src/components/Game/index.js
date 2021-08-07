@@ -6,6 +6,7 @@ import "./styles.css";
 export default function Game() {
 	const [messages, setMessages] = useState([]);
 	const [message, setMessage] = useState();
+	const [messagesBottom, setMessagesBottom] = useState();
 	const [game, setGame] = useState([]);
 	const [players, setPlayers] = useState(undefined);
 	const [socket, setSocket] = useState(undefined);
@@ -49,6 +50,7 @@ export default function Game() {
 			socket.on("message", (data) => {
 				console.log("\n[message]", data);
 				setMessage(data);
+				messagesBottom.scrollIntoView({ behavior: "smooth" });
 			});
 
 			socket.on("update", (data) => {
@@ -116,6 +118,7 @@ export default function Game() {
 								</span>
 							)
 						)}
+						 <div style={{ opacity: 0 }} ref={(e) => setMessagesBottom(e)}>END</div>
 					</div>
 					<div id='game-chat-writer'>
 						<input type='text' autoFocus onKeyDown={keydown} />
