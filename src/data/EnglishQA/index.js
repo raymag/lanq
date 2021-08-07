@@ -58,7 +58,7 @@ const EnglishQA = [
 	},
 	{
 		thumbnail: "assets/EnglishQA/backpack.png",
-		answer: { englis: "backpack", spanish: "mochila", portuguese: "mochila" },
+		answer: { english: "backpack", spanish: "mochila", portuguese: "mochila" },
 	},
 	{
 		thumbnail: "assets/EnglishQA/goggles.png",
