@@ -39,7 +39,7 @@ const EnglishQA = [
 		thumbnail: "assets/EnglishQA/smartphone.png",
 		answer: {
 			english: "phone",
-			spanish: "teléfono móvil",
+			spanish: "telefono movil",
 			portuguese: "celular",
 		},
 	},
